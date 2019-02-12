@@ -38,8 +38,7 @@ sonarqube {
         property "sonar.sources", "src/main/"
         //property "sonar.login", "admin"
         //property "sonar.password", "admin"
-        property "sonar.sources" , "app/src/main/java"
-        property "sonar.java.source", "app/src/main/java"
+        property "sonar.java.source", "src/main/java"
         property "sonar.java.binaries", "build/intermediates/classes/debug"
         //property "sonar.projectBaseDir", "."
     }
