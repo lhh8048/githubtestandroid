@@ -27,16 +27,31 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply plugin: "sonar-runner"
+apply plugin: "org.sonarqube"
 
-sonarRunner {
-    sonarProperties {
+sonarqube {
+    properties {
+        property "sonar.projectName", "MyProject"
+        property "sonar.projectKey", "com.example.myproject"
         property "sonar.host.url", "http://164.125.34.124:9000"
-        property "sonar.sources", "src/main/java"
-        property "sonar.java.binaries", "build/intermediates/classes/release"
+        property "sonar.language", "java"
+        property "sonar.sources", "src/main/"
+        property "sonar.login", "admin"
+        property "sonar.password", "admin"
+        property "sonar.sources" , "app/src/main/java"
+        property "sonar.java.source", "app/src/main/java"
+        property "sonar.java.binaries", "build/intermediates/classes/debug"
+        property "sonar.projectBaseDir", "."
+    }
+}
 
-        property "sonar.login", "54d6d0f1ab4908bb3c4b22abfa1ce866584747d9"
-        property "sonar.projectKey", "my:testAndroid"
-        property "sonar.projectName", "testAndroid"
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6'
     }
 }
