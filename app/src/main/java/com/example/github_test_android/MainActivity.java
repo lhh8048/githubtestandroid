@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView a = new TextView(this);
-        a.setText("Hello World, My Home, Github, Jenkins, Sonaqube, Slack");
+        a.setText("Hello World, My Home, Github, Jenkins, Sonaqube and Slack");
         setContentView(a);
     }
 }
